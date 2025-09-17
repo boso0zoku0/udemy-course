@@ -6,10 +6,10 @@ currencies = [
     ("SEK", "Sweden"),
 ]
 
-for i in range(len(currencies) -1, -1, -1):
+for i in range(len(currencies) - 1, -1, -1):
     if currencies[i][0] == "USD":
         currencies.pop(i)
-        print(f'Deleted {currencies[i][1]}')
+        print(f"Deleted {currencies[i][1]}")
 print(currencies)
 
 

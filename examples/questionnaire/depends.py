@@ -1,5 +1,5 @@
-import string
 import random
+import string
 
 
 def generate_random_password():
@@ -10,17 +10,16 @@ def generate_random_password():
     return password
 
 
-
 def validate_username(username: str):
     prompt: str = "Введи имя"
     status: bool = False
-    
+
     if username.isspace():
         prompt = "Введите корректные данные\n. Возможно присутствуют лишние пробелы\n"
-    
+
     elif not username.isidentifier():
         prompt = "Введите корректные данные\n."
-    
+
     else:
         status = True
     return prompt, status
@@ -29,16 +28,16 @@ def validate_username(username: str):
 def validate_password(password: str):
     prompt: str = "Введи пароль"
     status: bool = False
-    
+
     if password is False:
         password = generate_random_password()
-    
+
     if password.isspace():
         prompt = "Введите корректные данные\n. Возможно присутствуют лишние пробелы\n"
-    
+
     elif not password.isidentifier():
         prompt = "Введите корректные данные\n."
-    
+
     else:
         status = True
     return prompt, status
@@ -46,7 +45,7 @@ def validate_password(password: str):
 
 def create_password():
     prompt: str = "Введите пароль: \n"
-    
+
     while True:
         username = input(prompt)
         prompt, status = validate_username(username)
@@ -57,7 +56,7 @@ def create_password():
 
 def create_username():
     prompt: str = "Введите имя: \n"
-    
+
     while True:
         username = input(prompt)
         prompt, status = validate_username(username)

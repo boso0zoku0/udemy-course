@@ -9,11 +9,6 @@
 #     print(f'{el + 1} {mark} {dela[el]}')
 
 
-
-
-
-
-
 dela = [
     ["Мыть посуду", True],
     ["Играть в пк", True],
@@ -22,8 +17,5 @@ dela = [
 for i in range(len(dela)):
     string = dela[i][0]
     boolean = dela[i][1]
-    if boolean:
-        mark = "[x]"
-    else:
-        mark = "[]"
-    print(f'{mark} {string} {boolean}')
+    mark = "[x]" if boolean else "[]"
+    print(f"{mark} {string} {boolean}")
