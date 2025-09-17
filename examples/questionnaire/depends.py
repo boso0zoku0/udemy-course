@@ -29,9 +29,6 @@ def validate_password(password: str):
     prompt: str = "Введи пароль"
     status: bool = False
 
-    if password is False:
-        password = generate_random_password()
-
     if password.isspace():
         prompt = "Введите корректные данные\n. Возможно присутствуют лишние пробелы\n"
 
@@ -47,11 +44,14 @@ def create_password():
     prompt: str = "Введите пароль: \n"
 
     while True:
-        username = input(prompt)
-        prompt, status = validate_username(username)
+        password = input(prompt)
+        if password == "yes":
+            password = generate_random_password()
+            break
+        prompt, status = validate_password(password)
         if status:
             break
-    return username
+    return password
 
 
 def create_username():
